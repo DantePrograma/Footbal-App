@@ -1,0 +1,110 @@
+.partidos-ahora-mismo-h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2.3rem;
+  padding: 40px;
+  background-color: var(--apple-700);
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+}
+
+.container ul {
+  max-width: 900px;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container ul li {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--apple-100);
+}
+
+.liga-name-img {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--apple-700);
+  color: var(--apple-50);
+  padding: 0px 10px;
+}
+
+.liga-name-img img {
+  width: 90px;
+  height: 90px;
+}
+
+.liga-name-img h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.equipos {
+  height: 250px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+}
+
+.equipos article {
+  height: 100%;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.team-img-name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.team-img-name img {
+  height: 85px;
+  width: 85px;
+}
+
+.teams p {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
