@@ -1,0 +1,77 @@
+.standings-section {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 6fr;
+  min-height: 90vh;
+}
+
+.standigs-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--apple-800);
+}
+
+.standigs-nav button {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.1rem;
+  text-align: left;
+  color: var(--apple-50);
+  font-weight: 600;
+}
+
+.standigs-nav button:hover {
+  border-left: 5px solid var(--apple-500);
+}
+
+.stadings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stadings ul {
+  width: 60%;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.stadings ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-logo-position-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.name-team,
+.logo-standing {
+  height: 25px;
+  width: 25px;
+  display: grid;
+  place-items: center;
+}
+
+.name-logo-position-team img {
+  height: 100%;
+  width: 100%;
+}
+
+.team-statistics {
+  display: flex;
+  gap: 5px;
+}

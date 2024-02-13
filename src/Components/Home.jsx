@@ -10,7 +10,9 @@ export const Home = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      "https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=5036c89ee9dfd665bf762adab0cb43df9edb8b296710535fc1c81cdcf66b29cc"
+      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${
+        import.meta.env.VITE_API_KEY
+      }`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -33,8 +35,7 @@ export const Home = () => {
         <ul>
           {loading ? (
             <Loader />
-          ) : (
-            data &&
+          ) : data ? (
             data.map((match, index) => {
               // Renderiza el nombre de la liga solo cuando cambia
               if (
@@ -42,7 +43,7 @@ export const Home = () => {
                 match.league_name !== data[index - 1].league_name
               ) {
                 return (
-                  <li key={match.league_key}>
+                  <li key={match.away_team_key}>
                     <div className="liga-name-img">
                       <h1>{match.league_name}</h1>
                       <img src={match.league_logo} alt="liga imagen" />
@@ -84,7 +85,7 @@ export const Home = () => {
                 );
               }
             })
-          )}
+          ) : null}
         </ul>
       </div>
     </>
