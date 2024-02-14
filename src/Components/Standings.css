@@ -2,10 +2,11 @@
   max-width: 1000px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.6fr 6fr;
-  min-height: 90vh;
+  grid-template-columns: 1.7fr 6fr;
+  min-height: calc(100vh - 80px);
   @media (max-width: 768px) {
-    grid-template-columns: none;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -15,12 +16,13 @@
   align-items: flex-start;
   background-color: var(--apple-800);
   @media (max-width: 768px) {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
   }
 }
 
 .standigs-nav button {
-  width: 100%;
   padding: 10px 5px;
   border: none;
   background-color: transparent;
@@ -51,9 +53,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  background-color: var(--apple-50);
   border-radius: 5px;
-  padding: 13px;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -61,10 +61,12 @@
 
 .stadings ul li {
   width: 100%;
+  padding: 13px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   font-weight: 500;
+  background-color: var(--apple-50);
 }
 
 .standings-container {
@@ -131,4 +133,10 @@
 .round-name {
   display: flex;
   justify-content: space-between;
+}
+
+.standings-mobile-menu {
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 }

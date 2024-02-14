@@ -16,7 +16,9 @@ export const NavBar = () => {
     <header className="header-nav-container">
       <nav className="nav-list">
         <div className="logo">
-          <h1>Football</h1>
+          <Link onClick={handleClick} to={"/"}>
+            <h1>Football</h1>
+          </Link>
         </div>
         <div className={`links ${clicked ? "mobile" : ""}`}>
           <Link onClick={handleClick} to={"/"}>

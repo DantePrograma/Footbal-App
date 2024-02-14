@@ -35,6 +35,10 @@
   background-color: var(--apple-100);
 }
 
+.container ul li > *:not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+
 .liga-name-img {
   height: 100px;
   display: flex;
@@ -53,6 +57,9 @@
 .liga-name-img h1 {
   font-size: 2rem;
   text-transform: uppercase;
+  @media (max-width: 550px) {
+    font-size: 1.3rem;
+  }
 }
 
 .equipos {
@@ -60,6 +67,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .equipos article {
@@ -86,12 +96,19 @@
 .team-img-name img {
   height: 85px;
   width: 85px;
+  @media (max-width: 550px) {
+    height: 70px;
+    width: 70px;
+  }
 }
 
 .teams p {
   text-align: center;
   font-weight: 500;
   font-size: 1.8rem;
+  @media (max-width: 550px) {
+    font-size: 1.4rem;
+  }
 }
 
 .score {
@@ -101,6 +118,9 @@
   gap: 10px;
   flex-direction: column;
   font-size: 2rem;
+  @media (max-width: 550px) {
+    font-size: 1.6 rem;
+  }
 }
 
 .score-container {
