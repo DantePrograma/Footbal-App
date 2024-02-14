@@ -4,6 +4,9 @@
   display: grid;
   grid-template-columns: 1.6fr 6fr;
   min-height: 90vh;
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
 }
 
 .standigs-nav {
@@ -11,6 +14,9 @@
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--apple-800);
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .standigs-nav button {
@@ -37,18 +43,39 @@
 }
 
 .stadings ul {
-  width: 60%;
+  width: 80%;
   margin: auto;
   list-style: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  gap: 7px;
+  gap: 20px;
+  background-color: var(--apple-50);
+  border-radius: 5px;
+  padding: 13px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .stadings ul li {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.standings-container {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid gray;
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 }
 
 .name-logo-position-team {
@@ -56,6 +83,9 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  @media (max-width: 768px) {
+    gap: 0;
+  }
 }
 
 .name-team,
@@ -74,4 +104,31 @@
 .team-statistics {
   display: flex;
   gap: 5px;
+  justify-content: space-between;
+}
+
+.statistics {
+  display: flex;
+  gap: 5px;
+}
+
+.statistics p {
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
+
+.statistics-p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  @media (max-width: 768px) {
+    width: 20px;
+  }
+}
+
+.round-name {
+  display: flex;
+  justify-content: space-between;
 }

@@ -105,13 +105,6 @@ export const Standings = () => {
         </button>
         <button
           onClick={() => {
-            changeCurrentLeague("1189");
-          }}
-        >
-          Prim. B Arg
-        </button>
-        <button
-          onClick={() => {
             changeCurrentLeague("332");
           }}
         >
@@ -124,32 +117,88 @@ export const Standings = () => {
           {loading ? (
             <Loader />
           ) : standings ? (
-            standings.map((team) => {
-              return (
-                <li key={team.team_key}>
-                  <div className="name-logo-position-team">
-                    <div className="name-team">
-                      <strong>{team.standing_place}</strong>
+            standings.map((standing, index) => {
+              // Renderiza el nombre de la liga solo cuando cambia
+              if (
+                index === 0 ||
+                standing.league_round !== standings[index - 1].league_round
+              ) {
+                return (
+                  <li key={standing.league_round}>
+                    <div className="round-name">
+                      {standing.league_round == "" ? (
+                        <h1>Tabla de posiciones</h1>
+                      ) : (
+                        <h1>{standing.league_round}</h1>
+                      )}
+                      <div className="statistics">
+                        <p className="statistics-p">PJ</p>
+                        <p className="statistics-p">G</p>
+                        <p className="statistics-p">E</p>
+                        <p className="statistics-p">P</p>
+                        <p className="statistics-p">GF</p>
+                        <p className="statistics-p">GC</p>
+                        <p className="statistics-p">DG</p>
+                        <p className="statistics-p">
+                          <strong>Pts</strong>
+                        </p>
+                      </div>
                     </div>
-                    <div className="logo-standing">
-                      <img src={team.team_logo} alt="team logo" />
-                    </div>
-                    <div className="team-position">
-                      <p>{team.standing_team}</p>
-                    </div>
-                  </div>
-                  <div className="team-statistics">
-                    <p>{team.standing_P}</p>
-                    <p>{team.standing_W}</p>
-                    <p>{team.standing_D}</p>
-                    <p>{team.standing_L}</p>
-                    <p>{team.standing_PTS}</p>
-                    <p>{team.standing_F}</p>
-                    <p>{team.standing_A}</p>
-                    <p>{team.standing_GD}</p>
-                  </div>
-                </li>
-              );
+
+                    {standings
+                      .filter((m) => m.league_round === standing.league_round)
+                      .map((filteredMatch) => {
+                        return (
+                          <div
+                            key={filteredMatch.team_key}
+                            className="standings-container"
+                          >
+                            <div className="name-logo-position-team">
+                              <div className="name-team">
+                                <strong>{filteredMatch.standing_place}</strong>
+                              </div>
+                              <div className="logo-standing">
+                                <img
+                                  src={filteredMatch.team_logo}
+                                  alt="team logo"
+                                />
+                              </div>
+                              <div className="team-position">
+                                <p>{filteredMatch.standing_team}</p>
+                              </div>
+                            </div>
+                            <div className="team-statistics">
+                              <p className="statistics-p">
+                                {filteredMatch.standing_P}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_W}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_D}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_L}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_F}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_A}
+                              </p>
+                              <p className="statistics-p">
+                                {filteredMatch.standing_GD}
+                              </p>
+                              <p className="statistics-p">
+                                <strong>{filteredMatch.standing_PTS}</strong>
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </li>
+                );
+              }
             })
           ) : (
             <h1>no hay ligas</h1>
@@ -159,3 +208,42 @@ export const Standings = () => {
     </section>
   );
 };
+
+// (
+//             standings.map((team) => {
+//               return (
+//                 <li key={team.team_key}>
+//                   <div className="name-logo-position-team">
+//                     <div className="name-team">
+//                       <strong>{team.standing_place}</strong>
+//                     </div>
+//                     <div className="logo-standing">
+//                       <img src={team.team_logo} alt="team logo" />
+//                     </div>
+//                     <div className="team-position">
+//                       <p>{team.standing_team}</p>
+//                     </div>
+//                   </div>
+//                   <div className="team-statistics">
+//                     <p>{team.standing_P}</p>
+//                     <p>{team.standing_W}</p>
+//                     <p>{team.standing_D}</p>
+//                     <p>{team.standing_L}</p>
+//                     <p>{team.standing_PTS}</p>
+//                     <p>{team.standing_F}</p>
+//                     <p>{team.standing_A}</p>
+//                     <p>{team.standing_GD}</p>
+//                   </div>
+//                 </li>
+//               );
+//             })
+//           )
+{
+  /* <button
+  onClick={() => {
+    changeCurrentLeague("1189");
+  }}
+>
+  Prim. B Arg
+</button>; */
+}
