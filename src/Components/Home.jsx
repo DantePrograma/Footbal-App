@@ -1,30 +1,9 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import "./Home.css";
 import { Loader } from "./Loader";
+import { useFetch } from "../api/useHomeFetch";
 
 export const Home = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${
-        import.meta.env.VITE_API_KEY
-      }`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setData(data.result);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log("error", error);
-        setLoading(false);
-      });
-  }, []);
+  const { data, loading } = useFetch();
 
   return (
     <>
@@ -46,7 +25,11 @@ export const Home = () => {
                   <li key={match.away_team_key}>
                     <div className="liga-name-img">
                       <h1>{match.league_name}</h1>
-                      <img src={match.league_logo} alt="liga imagen" />
+                      <img
+                        src={match.league_logo}
+                        alt="liga imagen"
+                        loading="lazy"
+                      />
                     </div>
                     {data
                       .filter((m) => m.league_name === match.league_name) // Filtra los partidos por liga
@@ -60,6 +43,7 @@ export const Home = () => {
                               <img
                                 src={filteredMatch.home_team_logo}
                                 alt="team 2 imagen"
+                                loading="lazy"
                               />
                               <p>{filteredMatch.event_home_team}</p>
                             </div>
@@ -75,6 +59,7 @@ export const Home = () => {
                               <img
                                 src={filteredMatch.away_team_logo}
                                 alt="team 1 imagen"
+                                loading="lazy"
                               />
                               <p>{filteredMatch.event_away_team}</p>
                             </div>

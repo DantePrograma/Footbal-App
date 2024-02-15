@@ -27,7 +27,9 @@ export const NavBar = () => {
           <Link onClick={handleClick} to={"Standings"}>
             standings
           </Link>
-          <Link onClick={handleClick}>teams</Link>
+          <Link onClick={handleClick} to={"Fixture"}>
+            fixture
+          </Link>
           <button onClick={handleClick} className="menu-close">
             <i className="bi bi-x-lg"></i>
           </button>
