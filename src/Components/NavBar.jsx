@@ -16,7 +16,7 @@ export const NavBar = () => {
     <header className="header-nav-container">
       <nav className="nav-list">
         <div className="logo">
-          <Link onClick={handleClick} to={"/"}>
+          <Link to={"/"}>
             <h1>Football</h1>
           </Link>
         </div>

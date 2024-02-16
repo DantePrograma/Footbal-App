@@ -1,0 +1,78 @@
+.fixture-container {
+}
+
+.fixture-container ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.fixture-container ul li section {
+  background-color: var(--apple-50);
+  border: 1px solid gray;
+}
+
+.fixture-league {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.no-games {
+  font-size: 2.6rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.set-day-container {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-day {
+  height: 50px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1.9fr 4fr 1.9fr;
+  place-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+}
+
+.set-day h1 {
+  background-color: var(--apple-50);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+.set-day button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: var(--apple-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+.set-day span {
+  background-color: transparent;
+}

@@ -7,6 +7,9 @@
   margin-bottom: 20px;
   color: #fff;
   text-transform: uppercase;
+  @media (max-width: 550px) {
+    font-size: 1.6rem;
+  }
 }
 
 .container {
@@ -31,8 +34,11 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   background-color: var(--apple-100);
+  @media (max-width: 550px) {
+    width: 95%;
+    margin: auto;
+  }
 }
 
 .container ul li > *:not(:last-child) {
@@ -52,6 +58,10 @@
 .liga-name-img img {
   width: 90px;
   height: 90px;
+  @media (max-width: 550px) {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .liga-name-img h1 {
@@ -69,6 +79,7 @@
   grid-template-columns: 1fr 0.5fr 1fr;
   @media (max-width: 550px) {
     grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
   }
 }
 
@@ -115,16 +126,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   flex-direction: column;
   font-size: 2rem;
+  background-color: #eee;
   @media (max-width: 550px) {
     font-size: 1.6 rem;
   }
 }
 
-.score-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.score p {
+  text-align: center;
 }

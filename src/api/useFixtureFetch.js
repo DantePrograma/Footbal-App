@@ -5,7 +5,7 @@ export const useFixtureApi = (today, league) => {
   const [loading, setLoading] = useState(false);
 
   const API_URL =
-    "https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=";
+    "https://apiv2.allsportsapi.com/football/?met=Fixtures&timezone=America/Buenos_Aires&leagueId=";
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
