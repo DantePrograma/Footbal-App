@@ -4,7 +4,7 @@ import { Loader } from "./Loader";
 import { useStandingsFetch } from "../api/useStandingsFetch";
 
 export const Standings = () => {
-  const [currentLeague, setCurrentLeague] = useState("44");
+  const [currentLeague, setCurrentLeague] = useState("152");
   const { standings, loading } = useStandingsFetch(currentLeague);
 
   return (

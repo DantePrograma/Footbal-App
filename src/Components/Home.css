@@ -108,8 +108,8 @@
   height: 85px;
   width: 85px;
   @media (max-width: 550px) {
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
   }
 }
 
@@ -118,7 +118,7 @@
   font-weight: 500;
   font-size: 1.8rem;
   @media (max-width: 550px) {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
@@ -131,10 +131,13 @@
   font-size: 2rem;
   background-color: #eee;
   @media (max-width: 550px) {
-    font-size: 1.6 rem;
+    font-size: 1.6rem;
   }
 }
 
 .score p {
   text-align: center;
+  @media (max-width: 550px) {
+    font-size: 1.2rem;
+  }
 }
